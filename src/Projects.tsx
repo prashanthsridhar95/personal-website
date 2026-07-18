@@ -45,7 +45,7 @@ function ConfigDrivenVisual({ color }: { color: string }) {
       {/* Engine box */}
       <rect x="95" y="26" width="52" height="28" rx="4" fill={color} opacity={0.15} stroke={color} strokeWidth="1.2" />
       <text x="121" y="38" textAnchor="middle" fill={color} fontSize="6.5" fontFamily="var(--mono)" fontWeight="600" opacity={0.85}>Engine</text>
-      <text x="121" y="48" textAnchor="middle" fill={color} fontSize="5" fontFamily="var(--mono)" opacity={0.5}>AppOS</text>
+      <text x="121" y="48" textAnchor="middle" fill={color} fontSize="5" fontFamily="var(--mono)" opacity={0.5}>Core</text>
       {/* Lines to products */}
       <line x1="147" y1="33" x2="160" y2="18" stroke={color} strokeWidth="0.8" opacity={0.3} />
       <line x1="147" y1="40" x2="160" y2="40" stroke={color} strokeWidth="0.8" opacity={0.3} />
@@ -199,10 +199,10 @@ interface Project {
 
 const PROJECTS: Project[] = [
   {
-    title: 'AppOS KMP SDK',
+    title: 'Multi-Product KMP SDK',
     description:
-      'Built a config-driven KMP SDK powering Zoho\'s AppOS SaaS products and legacy Zoho apps across mobile, macOS, and Windows. Products share a single engine — each declares its modules, endpoints, and dependency graphs via JSON, so new products onboard without touching platform code. A layered pipeline (use case → engine → repository → dependency executor) drives fetch/sync/load-more lifecycles; diagnosed and fixed a shared-mutable-state bug where in-place param mutation silently corrupted API query parameters across a dependency chain.',
-    tags: ['KMP', 'AppOS', 'Kotlin', 'Architecture'],
+      "A config-driven KMP SDK powering Zoho's multi-product suite across mobile and desktop. Products onboard entirely via JSON configs—sharing a single powerful engine for data pipelines and lifecycles without touching platform code.",
+    tags: ['KMP', 'Config-Driven', 'Kotlin', 'Architecture'],
     color: '#34D399',
     visual: (c) => <ConfigDrivenVisual color={c} />,
   },

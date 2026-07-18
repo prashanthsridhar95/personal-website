@@ -149,13 +149,7 @@ export default function Skills() {
         >
           {cat.skills.map((skill, idx) => (
             <div key={skill.name}>
-              <div
-                style={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  marginBottom: 8,
-                }}
-              >
+              <div style={{ marginBottom: 8 }}>
                 <span
                   style={{
                     fontSize: '0.85rem',
@@ -164,15 +158,6 @@ export default function Skills() {
                   }}
                 >
                   {skill.name}
-                </span>
-                <span
-                  style={{
-                    fontFamily: 'var(--mono)',
-                    fontSize: '0.7rem',
-                    color: 'var(--text-dim)',
-                  }}
-                >
-                  {skill.level}%
                 </span>
               </div>
               <div className="skill-bar-track">

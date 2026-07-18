@@ -26,6 +26,41 @@ function SharedBackendVisual({ color }: { color: string }) {
   );
 }
 
+function ConfigDrivenVisual({ color }: { color: string }) {
+  return (
+    <svg viewBox="0 0 220 80" fill="none" style={{ width: '100%', maxWidth: 220, height: 'auto' }}>
+      {/* JSON config block */}
+      <rect x="8" y="6" width="60" height="68" rx="4" fill={color} opacity={0.08} stroke={color} strokeWidth="0.8" />
+      <text x="38" y="18" textAnchor="middle" fill={color} fontSize="6" fontFamily="var(--mono)" opacity={0.5}>config.json</text>
+      {/* JSON lines */}
+      <rect x="14" y="24" width="36" height="3" rx="1" fill={color} opacity={0.2} />
+      <rect x="14" y="32" width="28" height="3" rx="1" fill={color} opacity={0.15} />
+      <rect x="14" y="40" width="36" height="3" rx="1" fill={color} opacity={0.2} />
+      <rect x="14" y="48" width="22" height="3" rx="1" fill={color} opacity={0.12} />
+      <rect x="14" y="56" width="32" height="3" rx="1" fill={color} opacity={0.18} />
+      <rect x="14" y="64" width="26" height="3" rx="1" fill={color} opacity={0.12} />
+      {/* Arrow */}
+      <line x1="70" y1="40" x2="88" y2="40" stroke={color} strokeWidth="1" opacity={0.4} />
+      <polygon points="88,36.5 95,40 88,43.5" fill={color} opacity={0.4} />
+      {/* Engine box */}
+      <rect x="95" y="26" width="52" height="28" rx="4" fill={color} opacity={0.15} stroke={color} strokeWidth="1.2" />
+      <text x="121" y="38" textAnchor="middle" fill={color} fontSize="6.5" fontFamily="var(--mono)" fontWeight="600" opacity={0.85}>Engine</text>
+      <text x="121" y="48" textAnchor="middle" fill={color} fontSize="5" fontFamily="var(--mono)" opacity={0.5}>AppOS</text>
+      {/* Lines to products */}
+      <line x1="147" y1="33" x2="160" y2="18" stroke={color} strokeWidth="0.8" opacity={0.3} />
+      <line x1="147" y1="40" x2="160" y2="40" stroke={color} strokeWidth="0.8" opacity={0.3} />
+      <line x1="147" y1="47" x2="160" y2="58" stroke={color} strokeWidth="0.8" opacity={0.3} />
+      {/* Product boxes */}
+      <rect x="160" y="10" width="50" height="16" rx="3" fill={color} opacity={0.1} stroke={color} strokeWidth="0.7" />
+      <text x="185" y="21" textAnchor="middle" fill={color} fontSize="6" fontFamily="var(--mono)" opacity={0.6}>Projects</text>
+      <rect x="160" y="32" width="50" height="16" rx="3" fill={color} opacity={0.1} stroke={color} strokeWidth="0.7" />
+      <text x="185" y="43" textAnchor="middle" fill={color} fontSize="6" fontFamily="var(--mono)" opacity={0.6}>CRM</text>
+      <rect x="160" y="52" width="50" height="16" rx="3" fill={color} opacity={0.1} stroke={color} strokeWidth="0.7" />
+      <text x="185" y="63" textAnchor="middle" fill={color} fontSize="6" fontFamily="var(--mono)" opacity={0.6}>Desk</text>
+    </svg>
+  );
+}
+
 function GanttVisual({ color }: { color: string }) {
   const bars = [
     { x: 16, w: 100, y: 10 },
@@ -172,6 +207,14 @@ const PROJECTS: Project[] = [
     isHero: true,
     color: '#FF2D78',
     visual: (c) => <SharedBackendVisual color={c} />,
+  },
+  {
+    title: 'AppOS KMP SDK',
+    description:
+      'Built a config-driven KMP SDK powering Zoho\'s AppOS SaaS products and legacy Zoho apps across mobile, macOS, and Windows. Products share a single engine — each declares its modules, endpoints, and dependency graphs via JSON, so new products onboard without touching platform code. A layered pipeline (use case → engine → repository → dependency executor) drives fetch/sync/load-more lifecycles; diagnosed and fixed a shared-mutable-state bug where in-place param mutation silently corrupted API query parameters across a dependency chain.',
+    tags: ['KMP', 'AppOS', 'Kotlin', 'Architecture'],
+    color: '#34D399',
+    visual: (c) => <ConfigDrivenVisual color={c} />,
   },
   {
     title: 'Gantt Chart',

@@ -4,7 +4,7 @@ import { SiZoho } from 'react-icons/si';
 export default function About() {
   const stats: { label: string; value: string; href?: string; icon?: boolean }[] = [
     { label: 'Company', value: 'Zoho', href: 'https://www.zoho.com/', icon: true },
-    { label: 'Experience', value: '6+ Years' },
+    { label: 'Experience', value: '7+ Years' },
     { label: 'Platform', value: 'Android' },
     { label: 'Languages', value: 'Kotlin · Java' },
     { label: 'Focus', value: 'KMP Architecture' },
@@ -50,7 +50,7 @@ export default function About() {
             <span style={{ color: 'var(--text)', fontWeight: 600 }}>
               Mobile Platform Engineer & KMP Architect
             </span>{' '}
-            at <a href="https://www.zoho.com/" target="_blank" rel="noreferrer" style={{ color: 'var(--text-secondary)', borderBottom: '1px solid var(--text-dim)', textDecoration: 'none' }}>Zoho</a> with 6+ years of experience. I own the shared backend
+            at <a href="https://www.zoho.com/" target="_blank" rel="noreferrer" style={{ color: 'var(--text-secondary)', borderBottom: '1px solid var(--text-dim)', textDecoration: 'none' }}>Zoho</a> with 7+ years of experience. I own the shared backend
             framework powering <a href="https://www.zoho.com/projects/" target="_blank" rel="noreferrer" style={{ color: 'var(--text-secondary)', borderBottom: '1px solid var(--text-dim)', textDecoration: 'none' }}>Zoho Projects</a> across Android, iOS & Desktop —
             basically, I write Kotlin once so nobody else has to write it thrice. 😄
           </motion.p>

@@ -93,7 +93,7 @@ export default function Hero({ onScrollTo }: HeroProps) {
       >
         Building the shared framework that powers{' '}
         <a href="https://www.zoho.com/projects/" target="_blank" rel="noreferrer" style={{ color: 'var(--text)', fontWeight: 600, textDecoration: 'none', borderBottom: '1px solid var(--text-dim)', transition: 'border-color 0.2s' }} onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--accent)'} onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--text-dim)'}>Zoho Projects</a>{' '}
-        across every platform. 6+ years crafting scalable mobile systems —
+        across every platform. 7+ years crafting scalable mobile systems —
         fueled by filter coffee and AR Rahman playlists.
       </motion.p>
 

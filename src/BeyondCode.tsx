@@ -57,12 +57,12 @@ const CARDS: Card[] = [
   {
     emoji: '🦁',
     title: '#YelloveForever 💛',
-    text: "Die-hard CSK fan and MS Dhoni devotee. Nothing beats a Chepauk evening under the lights — that yellow sea roaring for every helicopter shot. Thala forever.",
+    text: "Die-hard CSK fan and MS Dhoni devotee. Was at the Narendra Modi Stadium for the IPL 2023 final — watched Thala lift the 5th trophy live, surrounded by a roaring yellow sea. That night rewired something in my brain permanently. Nothing beats a Chepauk evening under the lights, but Ahmedabad on May 29th came pretty close.",
     tags: [
       { label: 'CSK', href: 'https://en.wikipedia.org/wiki/Chennai_Super_Kings' },
       { label: 'Dhoni', href: 'https://en.wikipedia.org/wiki/MS_Dhoni' },
+      { label: 'IPL 2023 Final', href: 'https://en.wikipedia.org/wiki/2023_IPL_final' },
       { label: 'Chepauk', href: 'https://en.wikipedia.org/wiki/M._A._Chidambaram_Stadium' },
-      { label: 'IPL', href: 'https://en.wikipedia.org/wiki/Indian_Premier_League' },
     ],
     accent: '#FFD54F',
   },

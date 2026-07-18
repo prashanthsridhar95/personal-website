@@ -40,11 +40,13 @@ const CARDS: Card[] = [
   {
     emoji: '🎬',
     title: <>Cinema Payyan <span style={{ fontWeight: 400, fontSize: '0.8rem', color: 'var(--text-dim)' }}>(Not <a href="https://cinemapayyan.com" target="_blank" rel="noreferrer" style={linkStyle('#64B5F6')}>him</a>. Though he's my brother 😜)</span></>,
-    text: <>You can find me at <a href="https://maps.app.goo.gl/vY5gbPvwKufQewGg6" target="_blank" rel="noreferrer" style={linkStyle('#64B5F6')}>Broadway cinemas</a> almost every weekend. Tamil cinema, Hollywood, auteur films — if it's on the big screen, I'm there. Recent favourite — Dhurandhar.</>,
+    text: <>You can find me at <a href="https://maps.app.goo.gl/vY5gbPvwKufQewGg6" target="_blank" rel="noreferrer" style={linkStyle('#64B5F6')}>Broadway cinemas</a> almost every weekend. Tamil cinema, Hollywood, auteur films — if it's on the big screen, I'm there. Recent favourite — <a href="https://en.wikipedia.org/wiki/The_Odyssey_(2025_film)" target="_blank" rel="noreferrer" style={linkStyle('#64B5F6')}>The Odyssey</a>. Also a total sucker for Premium Large Formats — there's something about watching a film the way it was meant to be seen. Currently hunting PLF screens across India; have checked off IMAX with Laser, EPIQ, and HyperX so far. The list keeps growing.</>,
     tags: [
       { label: 'Thiagarajan Kumararaja', href: 'https://en.wikipedia.org/wiki/Thiagarajan_Kumararaja' },
       { label: 'GVM', href: 'https://en.wikipedia.org/wiki/Gautham_Vasudev_Menon' },
       { label: 'Adithya Dhar', href: 'https://en.wikipedia.org/wiki/Aditya_Dhar' },
+      { label: 'IMAX', href: 'https://en.wikipedia.org/wiki/IMAX' },
+      { label: 'PLF Nerd' },
     ],
     accent: '#64B5F6',
     link: {

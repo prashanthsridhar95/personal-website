@@ -3,15 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 /* ─── data ──────────────────────────── */
 
-interface Skill {
-  name: string;
-  level: number;
-}
-
 interface Category {
   key: string;
   label: string;
-  skills: Skill[];
+  tools: string[];
   color: string;
 }
 
@@ -20,62 +15,49 @@ const CATEGORIES: Category[] = [
     key: 'lang',
     label: 'Languages',
     color: '#CAFF04',
-    skills: [
-      { name: 'Kotlin', level: 95 },
-      { name: 'Java', level: 90 },
-      { name: 'C / C++', level: 55 },
-    ],
+    tools: ['Kotlin', 'Java', 'C / C++'],
   },
   {
     key: 'android',
     label: 'Android & Jetpack',
     color: '#A855F7',
-    skills: [
-      { name: 'Jetpack Compose', level: 90 },
-      { name: 'Android SDK', level: 95 },
-      { name: 'Data Binding', level: 85 },
-      { name: 'ViewModel', level: 92 },
-      { name: 'LiveData', level: 88 },
-      { name: 'Room', level: 85 },
-      { name: 'Retrofit', level: 90 },
-      { name: 'Dagger / Hilt', level: 82 },
-      { name: 'Espresso', level: 50 },
-      { name: 'JUnit', level: 55 },
+    tools: [
+      'Jetpack Compose',
+      'Android SDK',
+      'Data Binding',
+      'ViewModel',
+      'LiveData',
+      'Room',
+      'Retrofit',
+      'Dagger / Hilt',
+      'Espresso',
+      'JUnit',
     ],
   },
   {
     key: 'arch',
     label: 'Architecture',
     color: '#00D4FF',
-    skills: [
-      { name: 'MVVM', level: 92 },
-      { name: 'MVP', level: 80 },
-      { name: 'MVI', level: 78 },
-      { name: 'Clean Architecture', level: 88 },
-    ],
+    tools: ['MVVM', 'MVP', 'MVI', 'Clean Architecture'],
   },
   {
     key: 'db',
     label: 'Databases',
     color: '#FF6B35',
-    skills: [
-      { name: 'SQLite', level: 88 },
-      { name: 'Room', level: 86 },
-      { name: 'SQLDelight', level: 80 },
-    ],
+    tools: ['SQLite', 'Room', 'SQLDelight'],
   },
   {
     key: 'tools',
     label: 'Tools & More',
     color: '#FF2D78',
-    skills: [
-      { name: 'Android Studio', level: 95 },
-      { name: 'Gradle', level: 85 },
-      { name: 'Git', level: 88 },
-      { name: 'REST APIs', level: 92 },
-      { name: 'KMP / KMM', level: 85 },
-      { name: 'l10n / i18n', level: 75 },
-      { name: 'Design Patterns', level: 88 },
+    tools: [
+      'Android Studio',
+      'Gradle',
+      'Git',
+      'REST APIs',
+      'KMP / KMM',
+      'l10n / i18n',
+      'Design Patterns',
     ],
   },
 ];
@@ -133,7 +115,7 @@ export default function Skills() {
         ))}
       </div>
 
-      {/* Skill bars */}
+      {/* Tool tags */}
       <AnimatePresence mode="wait">
         <motion.div
           key={active}
@@ -142,42 +124,48 @@ export default function Skills() {
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.25 }}
           style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '20px 48px',
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: 12,
           }}
         >
-          {cat.skills.map((skill, idx) => (
-            <div key={skill.name}>
-              <div style={{ marginBottom: 8 }}>
-                <span
-                  style={{
-                    fontSize: '0.85rem',
-                    fontWeight: 500,
-                    color: 'var(--text)',
-                  }}
-                >
-                  {skill.name}
-                </span>
-              </div>
-              <div className="skill-bar-track">
-                <motion.div
-                  className="skill-bar-fill"
-                  style={{
-                    background: cat.color,
-                    boxShadow: `0 0 8px ${cat.color}25`,
-                  }}
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${skill.level}%` }}
-                  viewport={{ once: true }}
-                  transition={{
-                    delay: idx * 0.04,
-                    duration: 0.7,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                />
-              </div>
-            </div>
+          {cat.tools.map((tool, idx) => (
+            <motion.span
+              key={tool}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                delay: idx * 0.03,
+                duration: 0.3,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="tag-pop"
+              style={{
+                fontFamily: 'var(--mono)',
+                fontSize: '0.78rem',
+                fontWeight: 500,
+                color: 'var(--text-secondary)',
+                padding: '8px 18px',
+                border: `1px solid ${cat.color}30`,
+                borderRadius: 'var(--radius)',
+                background: `${cat.color}08`,
+                transition: 'all 0.25s cubic-bezier(0.4, 0, 0.2, 1)',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.borderColor = cat.color;
+                e.currentTarget.style.color = 'var(--text)';
+                e.currentTarget.style.background = `${cat.color}15`;
+                e.currentTarget.style.boxShadow = `0 0 12px ${cat.color}20`;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.borderColor = `${cat.color}30`;
+                e.currentTarget.style.color = 'var(--text-secondary)';
+                e.currentTarget.style.background = `${cat.color}08`;
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              {tool}
+            </motion.span>
           ))}
         </motion.div>
       </AnimatePresence>

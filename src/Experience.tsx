@@ -9,6 +9,7 @@ const ROLES = [
     icon: <FiCpu size={18} />,
     color: '#FF6B35',
     points: [
+      'Built the AppOS KMP SDK — a config-driven engine powering Zoho\'s AppOS SaaS products across mobile, macOS & Windows. Products onboard via JSON config without touching platform code.',
       'Own the Kotlin Multiplatform architecture powering Zoho Projects across Android, iOS & Desktop.',
       'Drive cross-platform decisions — API layer, persistence (SQLDelight), and shared business logic.',
       'Define technical direction for the mobile org; mentor junior engineers on platform design.',

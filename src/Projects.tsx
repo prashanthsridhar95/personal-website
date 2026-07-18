@@ -193,21 +193,11 @@ interface Project {
   title: string;
   description: string;
   tags: string[];
-  isHero?: boolean;
   color: string;
   visual: (color: string) => ReactNode;
 }
 
 const PROJECTS: Project[] = [
-  {
-    title: 'Shared Backend Framework',
-    description:
-      'Cross-platform KMP framework powering Zoho Projects across Android, iOS & Desktop. API communication, SQLDelight persistence, clean interfaces — ~50% less dev time.',
-    tags: ['KMP', 'SQLDelight', 'REST API'],
-    isHero: true,
-    color: '#FF2D78',
-    visual: (c) => <SharedBackendVisual color={c} />,
-  },
   {
     title: 'AppOS KMP SDK',
     description:
@@ -215,6 +205,14 @@ const PROJECTS: Project[] = [
     tags: ['KMP', 'AppOS', 'Kotlin', 'Architecture'],
     color: '#34D399',
     visual: (c) => <ConfigDrivenVisual color={c} />,
+  },
+  {
+    title: 'Shared Backend Framework',
+    description:
+      'Cross-platform KMP framework powering Zoho Projects across Android, iOS & Desktop. API communication, SQLDelight persistence, clean interfaces — ~50% less dev time.',
+    tags: ['KMP', 'SQLDelight', 'REST API'],
+    color: '#FF2D78',
+    visual: (c) => <SharedBackendVisual color={c} />,
   },
   {
     title: 'Gantt Chart',
@@ -343,7 +341,7 @@ export default function Projects() {
                 <h3
                   style={{
                     fontFamily: 'var(--heading)',
-                    fontSize: p.isHero ? '1.2rem' : '1rem',
+                    fontSize: '1rem',
                     fontWeight: 700,
                     color: 'var(--text)',
                     letterSpacing: '-0.3px',
@@ -356,7 +354,7 @@ export default function Projects() {
               {/* Visual illustration */}
               <div
                 style={{
-                  width: p.isHero ? 180 : 120,
+                  width: 120,
                   flexShrink: 0,
                   opacity: 0.5,
                   transition: 'opacity 0.3s',
